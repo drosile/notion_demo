@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <h1><%= notification["name"] %></h1>
+    <h2>This notification's type is <%= notification["notification_type"] %>.</h2>
+    <h2>This notification's trigger value is <%= notification["trigger_value"] %>.</h2>
+    <h2>This notification happened at <%= notification["created_at"] %>.</h2>
+    <% if notification["acknowledged_on"] %>
+      <h2>This notification was acknowledged at <%= notification["acknowledged_on"] %> by <%= notification["acknowledged_by"] %>.</h2>
+    <% else %>
+      <h2>This notification hasn't been acknowledged!</h2>
+    <% end %>
+  </body>
+</html>

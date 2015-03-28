@@ -1,0 +1,12 @@
+<html>
+  <body>
+    <% [:sensors, :tasks, :notifications, :systems].each do |element_class| %>
+      <h2><%= element_class.to_s.capitalize %></h2>
+      <ul>
+      <% notion_data[element_class][element_class.to_s].each do |element| %>
+        <li><a href=<%= "/#{element_class}/#{element["id"]}" %>><%= element["name"] %></a></li>
+      <% end %>
+      </ul>
+    <% end %>
+  </body>
+</html>
